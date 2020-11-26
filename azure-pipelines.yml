@@ -26,12 +26,11 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/test-*.xml'
     searchFolder: '$(System.DefaultWorkingDirectory)/Webapp'
-
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Azure für Bildungseinrichtungen(306a3198-398f-45cf-bc88-f1becef3d807)'
     appType: 'webAppLinux'
-    appName: 'NikApp'
+    appName: 'FinalApp'
     package: '$(System.DefaultWorkingDirectory)/Webapp'
     customWebConfig: '-Handler iisnode -NodeStartFile index.js -appType node'
     
