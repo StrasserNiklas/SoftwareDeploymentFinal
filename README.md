@@ -1,7 +1,7 @@
 
 # Links
 
-Docker image in the registry (name is derived from the (shared) git repo): 
+Docker image in the registry (name is derived from the (shared) git repo): softwaredeploymentregistry.azurecr.io/strasserniklassoftwaredeploymentfinal
 
 Public AKS endpoint: http://52.142.85.240:8080/
 
@@ -62,3 +62,6 @@ We then used the default values, for image name `strasserniklassoftwaredeploymen
 
 After validating and configuring, the pipeline was ready to be run.
 
+## manifests folder
+
+This folder is created when running the pipeline and contains the relevant information for the AKS cluster.
