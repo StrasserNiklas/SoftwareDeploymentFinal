@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: strasserniklassoftwaredeploymentfinal 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: strasserniklassoftwaredeploymentfinal
+  template:
+    metadata:
+      labels:
+        app: strasserniklassoftwaredeploymentfinal 
+    spec:
+      containers:
+        - name: strasserniklassoftwaredeploymentfinal 
+          image: softwaredeploymentregistry.azurecr.io/strasserniklassoftwaredeploymentfinal
+          ports:
+          - containerPort: 8080
