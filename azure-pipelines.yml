@@ -17,5 +17,13 @@ steps:
 
 - script: |
     npm install
-    npm run build
+    npm test
   displayName: 'npm install and build'
+  workingDirectory: '$(Build.SourcesDirectory)/Webapp'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/test-*.xml'
+    searchFolder: '$(Build.SourcesDirectory)/Webapp'
