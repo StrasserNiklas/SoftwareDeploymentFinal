@@ -1,7 +1,7 @@
 
 # Links
 
-Docker image in the registry (name is derived from the (shared) git repo): softwaredeploymentregistry.azurecr.io/strasserniklassoftwaredeploymentfinal
+Docker image in the registry (name is derived from the (shared) git repo): http://softwaredeploymentregistry.azurecr.io/strasserniklassoftwaredeploymentfinal
 
 Public AKS endpoint: http://52.142.85.240:8080/
 
