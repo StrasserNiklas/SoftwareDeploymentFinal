@@ -1,4 +1,12 @@
 
+# Description
+
+Whenever there is a new checkin in GIT , the Azure DevOps pipeline is triggered and runs the following actions:
+
+    a new docker image of the WebApp is built
+    the image is saved in an Azure registry
+    the new image is deployed in the AKS cluster and available via and public IP
+
 # Links
 
 Docker image in the registry (name is derived from the (shared) git repo): softwaredeploymentregistry.azurecr.io/strasserniklassoftwaredeploymentfinal
