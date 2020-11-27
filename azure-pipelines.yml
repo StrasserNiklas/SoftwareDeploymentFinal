@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -20,23 +20,10 @@ steps:
     npm test
   displayName: 'npm install and build'
   workingDirectory: '$(Build.SourcesDirectory)/Webapp'
+
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/test-*.xml'
-    searchFolder: '$(System.DefaultWorkingDirectory)/Webapp'
-
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Azure für Bildungseinrichtungen(306a3198-398f-45cf-bc88-f1becef3d807)'
-    appType: 'webAppLinux'
-    appName: 'NikApp'
-    package: '$(System.DefaultWorkingDirectory)/Webapp'
-    customWebConfig: '-Handler iisnode -NodeStartFile index.js -appType node'
-    
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/Webapp'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    searchFolder: '$(Build.SourcesDirectory)/Webapp'
