@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: finalimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finalimage
+  template:
+    metadata:
+      labels:
+        app: finalimage 
+    spec:
+      containers:
+        - name: finalimage 
+          image: softwaredeploymentregistry.azurecr.io/finalimage
+          ports:
+          - containerPort: 8000
