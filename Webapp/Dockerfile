@@ -1,11 +1,13 @@
-FROM node:8
+FROM node:12
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
-RUN npm ci --only=production
+#RUN npm ci --only=production
+
+RUN npm install
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 8080
 CMD [ "npm", "start" ]
