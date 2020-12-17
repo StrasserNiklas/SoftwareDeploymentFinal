@@ -21,7 +21,7 @@ Login to Azure via the console:
 
     az login
 
-We created the AKS cluster:
+We created the AKS cluster using the already existing resouce group `SoftwareDeploymentFinal`:
 
     az aks create -g SoftwareDeploymentFinal -n aksFinal --node-count 1
 
