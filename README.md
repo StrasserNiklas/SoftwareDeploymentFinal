@@ -5,7 +5,7 @@ Whenever there is a new checkin in GIT , the Azure DevOps pipeline is triggered 
 
     a new docker image of the WebApp is built
     the image is saved in an Azure registry
-    the new image is deployed in the AKS cluster and available via and public IP
+    the new image is deployed in the AKS cluster and available via a public IP
 
 # Links
 
@@ -21,7 +21,7 @@ Login to Azure via the console:
 
     az login
 
-We created the AKS cluster:
+We created the AKS cluster using the already existing resouce group `SoftwareDeploymentFinal`:
 
     az aks create -g SoftwareDeploymentFinal -n aksFinal --node-count 1
 
